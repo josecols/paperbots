@@ -1,0 +1,102 @@
+body {
+  background-image: url('../img/body-bg.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.content-box {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, .3);
+  box-sizing: border-box;
+  left: 50%;
+  margin: 0 0 50px -20%;
+  min-height: 400px;
+  top: 150px;
+  padding: 50px;
+  position: absolute;
+  width: 40%;
+}
+.content-box .title {
+  color: #009D84;
+  font-size: 1.4em;
+}
+.form .group {
+  margin-bottom: 15px;
+}
+.form .group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.form .checkbox-group {
+  clear: both;
+  margin: 6px 0 30px 15px;
+  width: 200px;
+}
+.form .checkbox-group label {
+  margin-top: -2px;
+  margin-right: 2px;
+  padding: 0;
+}
+.form .checkbox-group input {
+  float: right;
+}
+.form label {
+  color: #999;
+  float: left;
+  font-weight: 400;
+  padding-top: 6px;
+}
+.form input[type=text] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  float: right;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1em;
+  margin-right: 60px;
+  padding: 5px 6px;
+  width: 260px;
+}
+.form input[type=text]:focus {
+  border: 1px solid #009D84;
+  outline: none;
+}
+button,
+.submit {
+  background-color: #009D84;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  float: right;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  margin-right: 60px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 8px 6px;
+  width: 274px;
+}
+button:hover,
+.submit:hover {
+  background-color: #39BCA4;
+  cursor: pointer;
+}
+.submit:focus {
+  outline: none;
+}
+.separator {
+  background-color: #ccc;
+  border: 0;
+  color: #ccc;
+  height: 1px;
+  margin-bottom: 20px;
+}
+.clearfix {
+  clear: both;  
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Paperbots - UCAB Guayana</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='css/paperbots.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="paperbots">
+  <div class="content-box" ng-controller="RegistroController">
+    <h2 class="title">Registro de participantes - Paperbots</h2>
+    <hr class="separator">
+    <form class="form" ng-submit="registro()">
+      <div class="group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" name="nombre" ng-model="registroModelo.nombre">
+      </div>
+      <div class="group">
+        <label for="correo">Correo electrónico</label>
+        <input type="text" name="correo" ng-model="registroModelo.correo">
+      </div>
+      <div class="group">
+        <label for="cedula">Cédula</label>
+        <input type="text" name="cedula" ng-model="registroModelo.cedula">
+      </div>
+      <div class="group">
+        <label>Categoría(s):</label>
+        <div class="clearfix"></div>
+        <div class="checkbox-group">          
+          <label for="patas">Robots con patas</label>
+          <input type="checkbox" name="patas" ng-model="registroModelo.patas">
+          <br>
+          <label for="ruedas">Robots con ruedas</label>
+          <input type="checkbox" name="ruedas" ng-model="registroModelo.ruedas">
+        </div>
+      </div>
+      <input type="submit" class="submit" value="Completar registro">
+    </form>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/RegistroController.js"></script>
+</html>
