@@ -3,9 +3,9 @@
   var app = angular.module('paperbots');
 
   app.controller('RegistroController', function ($scope, $http) {
-    $scope.registro = function (formValid) {
+    $scope.registro = function (form) {
       
-      if (!formValid || (!$scope.registroModelo.patas && !$scope.registroModelo.ruedas)) {
+      if (!form.$valid || (!$scope.registroModelo.patas && !$scope.registroModelo.ruedas)) {
         alert('Debe completar todos los campos');
         return;
       }
@@ -15,6 +15,8 @@
       $http.post('json/registro.php', $scope.registroModelo)
         .success(function (resp) {
           if (resp.success) {
+            $scope.registroModelo = {};
+            form.$setPristine();
             alert('Registro realizado con éxito, pronto recibirá en su correo más información acerca del evento');
           }
         })

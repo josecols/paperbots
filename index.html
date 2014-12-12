@@ -12,7 +12,7 @@
   <div class="content-box" ng-controller="RegistroController">
     <h2 class="title">Registro de participantes - Paperbots</h2>
     <hr class="separator">
-    <form name="form" class="form" ng-submit="registro(form.$valid)" novalidate>
+    <form name="form" class="form" ng-submit="registro(form)" novalidate>
       <div class="group">
         <label for="nombre">Nombre completo</label>
         <input type="text" name="nombre" ng-model="registroModelo.nombre" required>
