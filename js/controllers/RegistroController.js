@@ -14,10 +14,12 @@
       
       $http.post('json/registro.php', $scope.registroModelo)
         .success(function (resp) {
-          console.log(resp)
+          if (resp.success) {
+            alert('Registro realizado con éxito, pronto recibirá en su correo más información acerca del evento');
+          }
         })
         .error(function (resp) {
-          //TODO: Mostrar error.
+          alert('Ha ocurrido un error realizando el registro');
         });
     };
   });
