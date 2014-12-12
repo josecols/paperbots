@@ -12,28 +12,46 @@
   <div class="content-box" ng-controller="RegistroController">
     <h2 class="title">Registro de participantes - Paperbots</h2>
     <hr class="separator">
-    <form class="form" ng-submit="registro()">
+    <form name="form" class="form" ng-submit="registro(form.$valid)" novalidate>
       <div class="group">
         <label for="nombre">Nombre completo</label>
-        <input type="text" name="nombre" ng-model="registroModelo.nombre">
+        <input type="text" name="nombre" ng-model="registroModelo.nombre" required>
+        <div class="clearfix"></div>
+        <div ng-show="form.nombre.$dirty && form.nombre.$invalid" class="error">
+            <span ng-show="form.nombre.$error.required">Debe completar este campo.</span>
+        </div>
       </div>
       <div class="group">
         <label for="correo">Correo electrónico</label>
-        <input type="text" name="correo" ng-model="registroModelo.correo">
+        <input type="email" name="correo" ng-model="registroModelo.correo" required>
+        <div class="clearfix"></div>
+        <div ng-show="form.correo.$dirty && form.correo.$invalid" class="error">
+            <span ng-show="form.correo.$error.required">Debe completar este campo.</span>
+            <span ng-show="form.correo.$error.email">El correo debe tener un formato válido.</span>
+        </div>
       </div>
       <div class="group">
         <label for="cedula">Cédula</label>
-        <input type="text" name="cedula" ng-model="registroModelo.cedula">
+        <input type="text" name="cedula" ng-model="registroModelo.cedula" ng-pattern="/^[0-9]+$/" required>
+        <div class="clearfix"></div>
+        <div ng-show="form.cedula.$dirty && form.cedula.$invalid" class="error">
+            <span ng-show="form.cedula.$error.required">Por favor complete este campo.</span>
+            <span ng-show="form.cedula.$error.pattern">Ingrese solo números.</span>
+        </div>
       </div>
       <div class="group">
         <label>Categoría(s):</label>
         <div class="clearfix"></div>
-        <div class="checkbox-group">          
+        <div class="checkbox-group">
           <label for="patas">Robots con patas</label>
           <input type="checkbox" name="patas" ng-model="registroModelo.patas">
           <br>
           <label for="ruedas">Robots con ruedas</label>
           <input type="checkbox" name="ruedas" ng-model="registroModelo.ruedas">
+        </div>
+        <div class="clearfix"></div>
+        <div ng-show="form.patas.$dirty || form.ruedas.$dirty" class="error">
+            <span ng-show="!registroModelo.patas && !registroModelo.ruedas">Debe seleccionar al menos una categoría.</span>
         </div>
       </div>
       <input type="submit" class="submit" value="Completar registro">
@@ -43,4 +61,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers/RegistroController.js"></script>
+
 </html>

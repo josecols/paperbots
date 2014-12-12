@@ -52,17 +52,18 @@ body {
   font-weight: 400;
   padding-top: 6px;
 }
-.form input[type=text] {
+.form input[type=text],
+.form input[type=email] {
   border: 1px solid #ccc;
   border-radius: 4px;
   float: right;
   font-family: 'Lato', sans-serif;
   font-size: 1.1em;
-  margin-right: 60px;
   padding: 5px 6px;
   width: 260px;
 }
-.form input[type=text]:focus {
+.form input[type=text]:focus,
+.form input[type=email]:focus {
   border: 1px solid #009D84;
   outline: none;
 }
@@ -98,5 +99,8 @@ button:hover,
   margin-bottom: 20px;
 }
 .clearfix {
-  clear: both;  
+  clear: both;
+}
+.error {
+  color: #e95d4f;
 }
