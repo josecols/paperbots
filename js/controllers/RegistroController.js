@@ -4,14 +4,14 @@
 
   app.controller('RegistroController', function ($scope, $http) {
     $scope.registro = function (form) {
-      
+
       if (!form.$valid || (!$scope.registroModelo.patas && !$scope.registroModelo.ruedas)) {
         alert('Debe completar todos los campos');
         return;
       }
-      
+
       console.log($scope.registroModelo);
-      
+
       $http.post('json/registro.php', $scope.registroModelo)
         .success(function (resp) {
           if (resp.success) {
@@ -24,6 +24,12 @@
           alert('Ha ocurrido un error realizando el registro');
         });
     };
+
+    $scope.section = function (index) {
+      $('body').animate({
+        scrollTop: $('#section-' + index).offset().top
+      }, 'slow');
+    }
   });
 
 })();

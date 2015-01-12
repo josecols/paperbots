@@ -1,17 +1,139 @@
+html,
 body {
-  background-image: url('../img/body-bg.png');
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  min-height: 100%;
+}
+body {
   font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;
 }
+#section-1, #section-3 {
+  background-color: #2c3e50;
+  position: relative;
+  width: 100%;
+}
+#section-1 .fondo {
+  left: 50%;
+  top: 50%;
+  margin-top: -350px;
+  margin-left: -200px;
+  position: absolute;
+  z-index: 1;
+}
+#section-1 .uc-container {
+  width: 400px;
+  height: 300px;
+
+}
+#section-1 .uc-initial-content{
+  background-color: #39BCA4;
+}
+#section-1 .uc-front,
+#section-1 .uc-back,
+#section-1 .uc-single, 
+#section-1 .uc-final {
+  background-color: #fff;
+}
+#section-1 .title-box {
+  top: 50%;
+  margin-top: -194px;
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+}
+#section-1 .title-box p {
+  color: #39BCA4;
+  font-size: 1.2em;
+  margin: 5px 0;
+  text-align: center;
+}
+#section-1 .ucab {
+  color: #39BCA4;
+  font-size: 3em;
+  font-weight: 300;
+  text-align: center;
+}
+#section-1 .title {
+  color: #39BCA4;
+  font-size: 6em;
+  text-align: center;
+  text-transform: uppercase;
+}
+#section-1 .share {
+  bottom: 20px;
+  right: 20px;
+  color: #39BCA4;
+  position: absolute;
+  width: 300px;
+}
+#section-1 .share span {
+  font-size: 1.4em;
+  float: right;
+  margin: 0 15px;
+}
+#section-1 .share span:hover {
+  cursor: pointer;
+  color: #fff;
+}
+#section-1 .arrow {
+  left: 50%;
+  bottom: 20px;
+  margin-left: -14px;
+  position: absolute;
+}
+#section-1 .arrow span {
+  color: #39BCA4;
+  font-size: 2em;
+}
+#section-1 .arrow span:hover {
+  cursor: pointer;
+  color: #fff;
+}
+#section-2 {
+  padding: 100px;  
+}
+#section-2 .title-box {  
+  border-right: 3px solid #39BCA4;
+  float: left;  
+  padding-right: 20px;
+  width: 25%;
+}
+#section-2 .title {
+  color: #39BCA4;
+  font-size: 2em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+#section-2 .content {
+  float: right;
+  width: 70%;
+}
+#section-2 p {
+  color: #666;
+  line-height: 1.62em;
+  font-size: 1.4em;
+  text-align: center;
+  margin-top: 0;
+}
+#section-2 .arrow {
+  text-align: center;
+  padding-top: 100px;
+}
+#section-2 .arrow span {
+  color: #2c3e50;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+#section-2 .arrow span:hover {
+  cursor: pointer;
+  color: #39BCA4;
+}
+#section-2 .arrow i {
+  margin-left: 15px;  
+}
 .content-box {
   background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 0 2px 1px rgba(0, 0, 0, .3);
   box-sizing: border-box;
   left: 50%;
   margin: 0 0 50px -20%;
@@ -23,7 +145,12 @@ body {
 }
 .content-box .title {
   color: #009D84;
-  font-size: 1.4em;
+  font-size: 1.6em;
+  text-transform: uppercase;
+}
+.form {
+  text-align: center;
+  font-size: 1.2em;
 }
 .form .group {
   margin-bottom: 15px;
@@ -39,11 +166,12 @@ body {
   width: 200px;
 }
 .form .checkbox-group label {
-  margin-top: -2px;
-  margin-right: 2px;
+  margin-top: 10px;
+  margin-right: 10px;
   padding: 0;
 }
 .form .checkbox-group input {
+  margin-top: 16px;
   float: right;
 }
 .form label {
@@ -73,13 +201,12 @@ button,
   border: none;
   border-radius: 2px;
   color: #fff;
-  float: right;
   font-family: 'Lato', sans-serif;
   font-size: 1em;
-  margin-right: 60px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  margin-top: 30px;
   padding: 8px 6px;
   width: 274px;
 }
@@ -101,6 +228,11 @@ button:hover,
 .clearfix {
   clear: both;
 }
+.clearfix.margin {
+  margin: 40px 0;   
+}
 .error {
+  margin-top: 8px;
+  font-size: 0.8em !important;
   color: #e95d4f;
 }

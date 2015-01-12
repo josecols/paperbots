@@ -1,65 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="paperbots">
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Paperbots - UCAB Guayana</title>
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
   <link href='css/paperbots.css' rel='stylesheet' type='text/css'>
+  <link href='css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+  <link href='css/pfold.css' rel='stylesheet' type='text/css'>
 </head>
 
-<body ng-app="paperbots">
-  <div class="content-box" ng-controller="RegistroController">
-    <h2 class="title">Registro de participantes - Paperbots</h2>
-    <hr class="separator">
-    <form name="form" class="form" ng-submit="registro(form)" novalidate>
-      <div class="group">
-        <label for="nombre">Nombre completo</label>
-        <input type="text" name="nombre" ng-model="registroModelo.nombre" required>
-        <div class="clearfix"></div>
-        <div ng-show="form.nombre.$dirty && form.nombre.$invalid" class="error">
-            <span ng-show="form.nombre.$error.required">Debe completar este campo.</span>
-        </div>
+<body ng-controller="RegistroController">
+
+  <div class="section" id="section-1" full-page>
+
+    <!-- Fondo -->
+    <div class="fondo" fold>
+      <div class="uc-container">
+        <div class="uc-initial-content"></div>
+        <div class="uc-final-content"></div>
       </div>
-      <div class="group">
-        <label for="correo">Correo electrónico</label>
-        <input type="email" name="correo" ng-model="registroModelo.correo" required>
-        <div class="clearfix"></div>
-        <div ng-show="form.correo.$dirty && form.correo.$invalid" class="error">
+    </div>
+    <!-- Fondo -->
+
+    <div class="title-box">
+      <h1 class="ucab">UCAB Guayana</h1>
+      <h1 class="title">Paperbots</h1>
+      <p>Segunda competencia de robots de papel</p>
+      <p>Última semana - Enero 2015</p>
+    </div>
+
+    <div class="share">
+      <span><i class="fa fa-twitter"></i></span>
+      <span><i class="fa fa-facebook"></i></span>
+      <span><i class="fa fa-google-plus"></i></span>
+    </div>
+
+    <div class="arrow">
+      <span ng-click="section(2)"><i class="fa fa-chevron-circle-down"></i></span>
+    </div>
+
+  </div>
+
+  <div class="section" id="section-2" full-page>
+    <div class="title-box">
+      <h1 class="title">Acerca de la competencia</h1>
+    </div>
+
+    <div class="content">
+      <p>La competencia cuenta con 2 categorías: robots con patas y robots con ruedas, de las cuales resultarán 2 ganadores por categoría, el que recorra la mayor distancia y el que logre la mayor velocidad. Se contará con un máximo de 3 intentos de los cuales se tomará el mejor. En caso de empate se procederá a evaluar el siguiente mejor intento de cada participante. Si no se llega a ninguna solución, se repetirá la prueba a los involucrados hasta que desempaten.</p>
+      <p>Solo participarán los concursantes previamente inscritos. Las ligas y los clips serán distribuidos a cada participante por parte del comité organizativo del evento, mientras que las hojas de papel serán responsabilidad del concursante. No podrá modificarse la estructura del robot una vez haya iniciado la competencia, por lo que solo se permitirá el cambio de ligas en caso de que estas se rompan. El robot puede ser decorado como se prefiera sin hacer alusión a política, religión o cualquier otro tema que la junta organizadora considere de carácter sensible.</p>
+    </div>
+    <div class="clearfix margin"></div>
+
+    <div class="title-box">
+      <h1 class="title">Materiales a utilizar</h1>
+    </div>
+
+    <div class="content">
+      <p>Máximo 6 ligas, Máximo 4 clip, Papel en la medida que desee (preferiblemente reciclable), Teipe o pega blanca en la medida que se desee, Máximo 2 palillos o paletas de madera que no excedan los 10cm.</p>
+    </div>
+    <div class="clearfix margin"></div>
+
+    <div class="arrow">
+      <span ng-click="section(3)">Registro<i class="fa fa-chevron-circle-down"></i></span>
+    </div>
+  </div>
+
+  <div class="section" id="section-3" full-page>
+    <div class="content-box">
+      <h2 class="title">Registro de participantes</h2>
+      <hr class="separator">
+      <form name="form" class="form" ng-submit="registro(form)" novalidate>
+        <div class="group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" name="nombre" ng-model="registroModelo.nombre" required>
+          <div class="clearfix"></div>
+          <div ng-show="form.nombre.$dirty && form.nombre.$invalid" class="error">
+            <span ng-show="form.nombre.$error.required">Debe completar este campo.</span>
+          </div>
+        </div>
+        <div class="group">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" name="correo" ng-model="registroModelo.correo" required>
+          <div class="clearfix"></div>
+          <div ng-show="form.correo.$dirty && form.correo.$invalid" class="error">
             <span ng-show="form.correo.$error.required">Debe completar este campo.</span>
             <span ng-show="form.correo.$error.email">El correo debe tener un formato válido.</span>
+          </div>
         </div>
-      </div>
-      <div class="group">
-        <label for="cedula">Cédula</label>
-        <input type="text" name="cedula" ng-model="registroModelo.cedula" ng-pattern="/^[0-9]+$/" required>
-        <div class="clearfix"></div>
-        <div ng-show="form.cedula.$dirty && form.cedula.$invalid" class="error">
-            <span ng-show="form.cedula.$error.required">Por favor complete este campo.</span>
-            <span ng-show="form.cedula.$error.pattern">Ingrese solo números.</span>
-        </div>
-      </div>
-      <div class="group">
-        <label>Categoría(s):</label>
-        <div class="clearfix"></div>
-        <div class="checkbox-group">
-          <label for="patas">Robots con patas</label>
-          <input type="checkbox" name="patas" ng-model="registroModelo.patas">
-          <br>
-          <label for="ruedas">Robots con ruedas</label>
-          <input type="checkbox" name="ruedas" ng-model="registroModelo.ruedas">
-        </div>
-        <div class="clearfix"></div>
-        <div ng-show="form.patas.$dirty || form.ruedas.$dirty" class="error">
+        <div class="group">
+          <label>Categoría(s):</label>
+          <div class="clearfix"></div>
+          <div class="checkbox-group">
+            <label for="patas">Robots con patas</label>
+            <input type="checkbox" name="patas" ng-model="registroModelo.patas">
+            <br>
+            <label for="ruedas">Robots con ruedas</label>
+            <input type="checkbox" name="ruedas" ng-model="registroModelo.ruedas">
+          </div>
+          <div class="clearfix"></div>
+          <div ng-show="form.patas.$dirty || form.ruedas.$dirty" class="error">
             <span ng-show="!registroModelo.patas && !registroModelo.ruedas">Debe seleccionar al menos una categoría.</span>
+          </div>
         </div>
-      </div>
-      <input type="submit" class="submit" value="Completar registro">
-    </form>
+        <input type="submit" class="submit" value="Completar registro">
+      </form>
+    </div>
   </div>
 </body>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="js/modernizr.custom.79639.js"></script>
+<script src="js/jquery.pfold.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers/RegistroController.js"></script>
+<script src="js/directives/fullPage.js"></script>
+<script src="js/directives/fold.js"></script>
 
 </html>
