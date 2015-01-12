@@ -1,0 +1,82 @@
+@media screen and (max-width: 1000px) {
+  #section-1 .fondo {
+    margin-top: -230px;
+    margin-left: -115px;
+
+  }
+  #section-1 .uc-container {
+    width: 220px;
+    height: 110px;
+  }
+  #section-1 .ucab {
+    font-size: 2em;
+  }
+  #section-1 .title {
+    font-size: 3em;
+    margin-bottom: 50px;
+  }
+  #section-1 .title-box p {    
+    font-size: 1em;
+  }
+  #section-1 .share {
+    bottom: 120px;
+    left: 50%;
+    margin-left: -100px;
+    text-align: center;
+    width: 200px;
+  }
+  #section-1 .share span {
+    float: none;
+  }
+  #section-2 {    
+    height: auto !important;
+    padding: 15px;
+  }
+  #section-2 .title-box {
+    float: none;
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 5px;
+  }
+  #section-2 .title {
+    font-size: 1.4em;
+    text-align: center;
+  }
+  #section-2 .content {
+    float: none;
+    width: 100%;
+  }
+  #section-2 p {
+    font-size: 1em;
+    text-align: justify;
+  }
+  #section-2 .arrow {
+    text-align: center;
+    padding: 20px 0;
+  }
+  #section-2 .arrow span {
+    font-size: 1.4em;
+  }
+  #section-3 {
+    box-sizing: border-box;
+    padding: 15px;
+  }
+  .content-box {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    position: static;
+  }
+  .form {
+    font-size: 1em;
+  }
+  .form input[type=text],
+  .form input[type=email] {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  button,
+  .submit {
+    width: 100%;
+  }
